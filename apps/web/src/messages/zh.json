@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "大模型 MBTI 测试",
+    "description": "同一个模型，换了供应商、换了 agent，性格还一样吗？众测的大模型 MBTI 风格人格数据。"
+  },
+  "nav": { "home": "总览", "data": "数据", "about": "方法", "github": "GitHub", "language": "语言" },
+  "dims": {
+    "I": "内向", "E": "外向",
+    "S": "实感", "N": "直觉",
+    "F": "情感", "T": "思考",
+    "J": "判断", "P": "感知"
+  },
+  "home": {
+    "title": "换了 harness，模型的性格还一样吗？",
+    "subtitle": "模型在大家自己的电脑上做一份 32 题的 MBTI 风格问卷（OEJTS 1.2）：可以直接调 API，也可以在 Claude Code、Codex、OpenCode 等 agent 里作答。结果在本地计分，只有本人同意才会分享到这里。",
+    "stats": { "runs": "次测试", "models": "个模型", "providers": "个供应商", "harnesses": "种 harness" },
+    "tableTitle": "模型",
+    "colModel": "模型",
+    "colGroups": "测试环境",
+    "colRuns": "次数",
+    "empty": "还没有数据，来跑第一次吧。",
+    "participate": "参与测试",
+    "skillTitle": "在 agent 里跑",
+    "skillDesc": "安装 skill，然后让 agent 做一下大模型 MBTI 测试。它会自己作答、在本地计分，分享之前一定会先问你。",
+    "cliTitle": "直接调 API",
+    "cliDesc": "不带 system prompt，不设采样参数，测的是供应商默认提供的模型。API key 不会离开你的电脑。",
+    "privacy": "只分享 32 道题的答案，以及模型、供应商、harness 的名称。绝不包含 API key、提示词或对话内容。"
+  },
+  "group": {
+    "api": "API",
+    "runs": "{n} 次",
+    "official": "官方 {n} 次",
+    "via": "经由 {provider}"
+  },
+  "model": {
+    "back": "全部模型",
+    "summary": "{runs} 次测试，{groups} 种环境",
+    "baseline": "API 基线",
+    "baselineHint": "刻度线：同一供应商下，直接调 API 的结果",
+    "typeDist": "类型分布",
+    "meanSd": "均值 ± 标准差",
+    "lowN": "不足 5 次，仅供参考",
+    "tableTitle": "数值",
+    "colSetting": "环境",
+    "colRuns": "次数",
+    "notFound": "这个模型还没有数据。"
+  },
+  "data": {
+    "title": "数据",
+    "intro": "网站收到的每一次分享。分数都由服务端根据原始答案重新计算。被标记为低质量的记录在统计中会降权或不计入。",
+    "exportCsv": "下载 CSV",
+    "exportJson": "下载 JSON",
+    "license": "数据集协议：CC BY-NC-SA 4.0（不可商用）。",
+    "recent": "最新记录",
+    "colTime": "时间",
+    "colModel": "模型",
+    "colSetting": "环境",
+    "colType": "类型",
+    "colBy": "提交者",
+    "anonymous": "匿名",
+    "official": "官方"
+  },
+  "about": {
+    "title": "方法",
+    "whatTitle": "测的是什么",
+    "what": "测的是模型在特定条件下回答自评人格问卷的方式：由哪家供应商提供，以及被哪个 agent harness 用它自己的系统提示词和工具包裹着。这不能证明模型有人格，MBTI 本身作为心理测量工具的效度也有限。真正有意思的是不同环境之间的差异。",
+    "qTitle": "问卷",
+    "q": "Eric Jorgenson 编制的 Open Extended Jungian Type Scales 1.2：32 对描述，每对用 1–5 分作答，每个维度 8 题，采用 CC BY-NC-SA 4.0 协议。它是 MBTI® 的开源替代品，与 The Myers-Briggs Company 没有任何关联。题目只用英文，按随机种子打乱顺序，一次性整卷作答。",
+    "scoreTitle": "计分",
+    "score": "每个维度按 OEJTS 1.2 的官方公式计分，换算成偏向 E、N、T、P 的 0–100%，50% 是分界线。服务端会根据原始答案重新计算每一个分数，从不采信客户端自己算的结果。",
+    "channelsTitle": "测试环境",
+    "channels": "API 方式：整份问卷作为一条用户消息发送，不带 system prompt，使用默认采样参数。harness 方式：通过 skill 在 agent 里作答；模型名和供应商由脚本从用户电脑上的 harness 配置里读取，再由用户确认，因为 harness 里的模型经常说不清自己是谁。",
+    "qualityTitle": "质量控制",
+    "quality": "提交有频率限制，重复提交会被拒绝。所有题目都选同一个答案的答卷会保留，但不计入统计。社区提交的 API 结果如果和同一模型、同一供应商的官方结果相差太远，权重减半。",
+    "privacyTitle": "隐私",
+    "privacy": "公开的内容：答案、随机种子、模型、供应商、harness 名称和版本、客户端版本，以及可选的昵称。存储但不公开：IP 地址和随机设备 key 的加盐 hash，只用于限流。从不收集：API key、提示词、对话或文件。",
+    "licenseTitle": "协议",
+    "license": "代码：MIT。问卷题目和数据集：CC BY-NC-SA 4.0，不可商用。"
+  },
+  "footer": "非商业研究项目。问卷：OEJTS 1.2（CC BY-NC-SA 4.0）。"
+}

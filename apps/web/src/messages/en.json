@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "LLM MBTI",
+    "description": "Does a model keep the same personality across providers and agent harnesses? Crowd-sourced MBTI-style results for LLMs."
+  },
+  "nav": { "home": "Overview", "data": "Data", "about": "Method", "github": "GitHub", "language": "Language" },
+  "dims": {
+    "I": "Introversion", "E": "Extraversion",
+    "S": "Sensing", "N": "Intuition",
+    "F": "Feeling", "T": "Thinking",
+    "J": "Judging", "P": "Perceiving"
+  },
+  "home": {
+    "title": "Does a model keep its personality when you change the harness?",
+    "subtitle": "Models take a 32-item MBTI-style questionnaire (OEJTS 1.2) on people's own machines — through the raw API, or inside an agent such as Claude Code, Codex or OpenCode. Results are scored locally and shared here only when the owner chooses to.",
+    "stats": { "runs": "runs", "models": "models", "providers": "providers", "harnesses": "harnesses" },
+    "tableTitle": "Models",
+    "colModel": "Model",
+    "colGroups": "Where it was measured",
+    "colRuns": "Runs",
+    "empty": "No results yet. Be the first to run the test.",
+    "participate": "Run the test",
+    "skillTitle": "Inside your agent",
+    "skillDesc": "Install the skill, then ask your agent to take the LLM MBTI test. It answers, scores locally, and asks before sharing anything.",
+    "cliTitle": "Through the raw API",
+    "cliDesc": "No system prompt, no sampling parameters — the model as the provider serves it. Your API key never leaves your machine.",
+    "privacy": "Only the 32 answers and the model, provider and harness names are shared. Never API keys, prompts or conversations."
+  },
+  "group": {
+    "api": "API",
+    "runs": "{n, plural, one {# run} other {# runs}}",
+    "official": "{n} official",
+    "via": "via {provider}"
+  },
+  "model": {
+    "back": "All models",
+    "summary": "{runs, plural, one {# run} other {# runs}} across {groups, plural, one {# setting} other {# settings}}",
+    "baseline": "API baseline",
+    "baselineHint": "Tick: the same model through the raw API at the same provider",
+    "typeDist": "Types",
+    "meanSd": "mean ± sd",
+    "lowN": "Fewer than 5 runs — treat as anecdotal",
+    "tableTitle": "Numbers",
+    "colSetting": "Setting",
+    "colRuns": "Runs",
+    "notFound": "No results for this model yet."
+  },
+  "data": {
+    "title": "Data",
+    "intro": "Every shared run, as served by the site. Scores are recomputed on the server from the raw answers. Runs flagged as low quality count for less or not at all in the statistics.",
+    "exportCsv": "Download CSV",
+    "exportJson": "Download JSON",
+    "license": "Dataset licence: CC BY-NC-SA 4.0 (non-commercial).",
+    "recent": "Latest runs",
+    "colTime": "Time",
+    "colModel": "Model",
+    "colSetting": "Setting",
+    "colType": "Type",
+    "colBy": "By",
+    "anonymous": "anonymous",
+    "official": "official"
+  },
+  "about": {
+    "title": "Method",
+    "whatTitle": "What this measures",
+    "what": "How a model answers a self-report personality questionnaire under specific conditions: which provider serves it, and which agent harness wraps it with its own system prompt and tools. It does not show that models have personalities, and MBTI itself has limited validity as a psychological instrument. The interesting part is the difference between settings.",
+    "qTitle": "Questionnaire",
+    "q": "Open Extended Jungian Type Scales 1.2 by Eric Jorgenson: 32 pairs of descriptions rated 1–5, eight per dimension, licensed CC BY-NC-SA 4.0. It is an open alternative to the MBTI® and has no affiliation with The Myers-Briggs Company. Items are shown in English, in a seeded random order, all at once.",
+    "scoreTitle": "Scoring",
+    "score": "Each dimension is scored with the official OEJTS 1.2 formulas and reported as 0–100% toward E, N, T or P; 50% is the boundary. The server recomputes every score from the raw answers and never trusts a client's own result.",
+    "channelsTitle": "Settings",
+    "channels": "API runs send the questionnaire as a single user message with no system prompt and default sampling. Harness runs happen inside an agent through the skill; the model id and provider are read from the harness configuration on the user's machine and confirmed by the user, because models inside a harness often misreport what they are.",
+    "qualityTitle": "Quality",
+    "quality": "Submissions are rate-limited and deduplicated. Sheets with the same answer for every item are kept but excluded from statistics. Community API runs that land far from the official runs of the same model and provider count half.",
+    "privacyTitle": "Privacy",
+    "privacy": "Shared: the answers, seed, model, provider, harness name and version, client version, and an optional nickname. Stored but never published: salted hashes of the IP address and of a random device key, used only for rate limiting. Never collected: API keys, prompts, conversations or files.",
+    "licenseTitle": "Licences",
+    "license": "Code: MIT. Questionnaire items and the dataset: CC BY-NC-SA 4.0, non-commercial."
+  },
+  "footer": "Non-commercial research project. Questionnaire: OEJTS 1.2 (CC BY-NC-SA 4.0)."
+}
