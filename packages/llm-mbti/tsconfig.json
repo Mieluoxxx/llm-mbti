@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "paths": {
+      "@llm-mbti/questionnaire": ["../questionnaire/src/index.ts"]
+    }
+  },
+  "include": ["src", "test"]
+}

@@ -1,0 +1,15 @@
+The questionnaire items in this directory are taken from the
+Open Extended Jungian Type Scales 1.2 by Eric Jorgenson
+(https://openpsychometrics.org/tests/OJTS/development/OEJTS1.2.pdf).
+
+They are licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License
+(https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+The OEJTS comes with no guarantees of reliability or accuracy of any kind.
+This project is not affiliated with the Myers-Briggs Type Indicator or
+The Myers-Briggs Company.
+
+Changes: the items were transcribed into JSON; the scoring formulas from the
+original PDF were rewritten as a per-item sign ("sign": 1 means the right-hand
+description points toward the positive pole E/N/T/P). Item wording is unchanged.
