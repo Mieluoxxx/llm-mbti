@@ -77,9 +77,11 @@ export interface UploadResult {
 }
 
 export async function upload(submission: Submission, url = endpoint(), f: typeof fetch = fetch): Promise<UploadResult> {
+  // Only the project's own baseline runs set this; the server marks them "official".
+  const token = process.env.LLM_MBTI_OFFICIAL_TOKEN
   const res = await f(url, {
     method: 'POST',
-    headers: { 'content-type': 'application/json' },
+    headers: { 'content-type': 'application/json', ...(token ? { authorization: `Bearer ${token}` } : {}) },
     body: JSON.stringify(submission),
   })
   const text = await res.text()
